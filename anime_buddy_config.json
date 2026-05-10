@@ -1,0 +1,31 @@
+{
+  "buddy": {
+    "name": "Miku",
+    "title": "Desktop Companion",
+    "personality": "cheerful",
+    "speech_style": "casual",
+    "talk_frequency": "normal",
+    "energy_level": "normal"
+  },
+  "appearance": {
+    "skin": "#FFD5B8",
+    "hair_primary": "#3A1F6E",
+    "hair_highlight": "#5B2FC0",
+    "eye_color": "#6040E0",
+    "shirt": "#6C8EEF",
+    "skirt": "#3A54C0",
+    "ribbon": "#EF6CAA",
+    "blush": "#FFB3B3"
+  },
+  "behavior": {
+    "walk_speed": 2.5,
+    "use_emojis": true,
+    "human_behaviors": true
+  },
+  "llm": {
+    "enabled": false,
+    "api_key": "",
+    "api_url": "https://api.openai.com/v1/chat/completions",
+    "model": "gpt-3.5-turbo"
+  }
+}
