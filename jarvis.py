@@ -49,15 +49,24 @@ try:
 except ImportError:
     WINSOUND_OK = False
 
+# ═════════════════════════════════════════════════════════════════════════════
+#  LOAD ENVIRONMENT VARIABLES (from .env file if python-dotenv installed)
+# ═════════════════════════════════════════════════════════════════════════════
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # python-dotenv not installed, use system env vars only
 
 # ═════════════════════════════════════════════════════════════════════════════
 #  MULTI-PROVIDER AI CONFIG
-#  Fill in any keys you have. JARVIS will try each in order, skip on 429/error.
+#  Keys are read from environment variables or .env file.
+#  Create a .env file in this folder (see .env.example) or set env vars.
 # ═════════════════════════════════════════════════════════════════════════════
 
-GEMINI_API_KEY     = "AIzaSyAfWyGTGNP-DQjIZe0FaSIErSDkFmtMqlY"
-GROQ_API_KEY       = ""   # FREE → https://console.groq.com  (recommended!)
-OPENROUTER_API_KEY = ""   # FREE → https://openrouter.ai
+GEMINI_API_KEY     = os.getenv("GEMINI_API_KEY", "")
+GROQ_API_KEY       = os.getenv("GROQ_API_KEY", "")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 
 MEMORY_FILE = os.path.join(os.path.dirname(__file__), "jarvis_memory.json")
 PLUGINS_DIR = os.path.join(os.path.dirname(__file__), "plugins")
