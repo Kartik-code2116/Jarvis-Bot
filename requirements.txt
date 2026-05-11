@@ -1,13 +1,16 @@
+# JARVIS v3.0 — requirements
+# Install with: pip install -r requirements.txt
+
+# Core (required)
 pyautogui>=0.9.54
 Pillow>=10.0.0
-pygetwindow>=0.0.9
 requests>=2.31.0
-pyinstaller>=6.0.0
-python-dotenv>=1.0.0    # For loading API keys from .env file
+python-dotenv>=1.0.0
 
-# Optional - for full system capabilities:
-# pycaw>=1.1.7        # System volume control
-# comtypes>=1.1.10    # Windows COM interface
-# win10toast>=0.9     # System notifications
-# selenium>=4.0.0     # Browser automation
-# webdriver-manager>=4.0.0  # Web driver management
+# Optional but recommended
+pygetwindow>=0.0.9     # window management
+psutil>=5.9.0          # RAM/CPU/battery stats
+pyttsx3>=2.90          # text-to-speech fallback
+
+# Build to .exe (only if packaging)
+# pyinstaller>=6.0.0
